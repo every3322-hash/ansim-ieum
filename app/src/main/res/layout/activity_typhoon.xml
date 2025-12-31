@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/typhoonLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="15dp"
+    android:paddingHorizontal="10dp"
+    android:background="#FFFFFF"
+    tools:context=".TyphoonActivity">
+
+    <!-- 상단 툴바 -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/top_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:contentInsetStart="5dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="뒤로가기"
+            android:padding="4dp" />
+        <TextView
+            android:id="@+id/titleTyphoon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="태풍 조회"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="#205D67"
+            android:layout_gravity="center" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- 데이터 없을 때 표시 -->
+    <TextView
+        android:id="@+id/emptyTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="태풍 정보가 없습니다."
+        android:textSize="16sp"
+        android:textColor="#FF4444"
+        android:gravity="center"
+        android:padding="12dp"
+        android:visibility="gone"
+        android:background="#FFF0F0"
+        android:layout_marginBottom="8dp" />
+
+    <!-- 태풍 정보 리스트 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
+</LinearLayout>

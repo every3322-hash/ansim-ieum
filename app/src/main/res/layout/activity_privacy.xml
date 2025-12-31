@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:padding="15dp"
+    android:id="@+id/privacy"
+    tools:context=".PrivacyActivity">
+
+    <!-- 상단 툴바 -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/top_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_back_arrow"
+            android:contentDescription="뒤로가기"
+            android:padding="4dp" />
+
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="이용약관 및 개인정보"
+            android:textColor="#205D67"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/SettingsSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:showDividers="middle">
+
+        <!-- 이용약관 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/box_layout">
+            <LinearLayout
+                android:id="@+id/privacy_Tab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="이용약관"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+                <ImageView
+                    android:id="@+id/expandIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/baseline_right"
+                    android:contentDescription="Expand" />
+            </LinearLayout>
+            <!-- 첫번째 드롭다운 내용 (초기에는 숨김) -->
+            <LinearLayout
+                android:id="@+id/privacyDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingStart="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#F5F5F5">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:fillViewport="true">
+                    <TextView
+                        android:id="@+id/privacy_Text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="이용약관 내용~~"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"/>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 개인정보 처리 방침 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/box_layout">
+            <LinearLayout
+                android:id="@+id/privacy_Tab2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="개인정보 처리방침"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+                <ImageView
+                    android:id="@+id/expandIcon2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/baseline_right"
+                    android:contentDescription="Expand" />
+            </LinearLayout>
+            <!-- 두번째 드롭다운 내용 -->
+            <LinearLayout
+                android:id="@+id/privacyDropdown2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#f5f5f5">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:fillViewport="true">
+                    <TextView
+                        android:id="@+id/privacy_Text2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="개인정보 처리방침 내용 ~~"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"/>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 위치정보수집목적 및 이용방침 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/box_layout">
+            <LinearLayout
+                android:id="@+id/privacy_Tab3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="위치 정보 수집 목적 및 이용 방침"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+                <ImageView
+                    android:id="@+id/expandIcon3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/baseline_right"
+                    android:contentDescription="Expand" />
+            </LinearLayout>
+            <!-- 세번째 드롭다운 내용 -->
+            <LinearLayout
+                android:id="@+id/privacyDropdown3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingStart="10dp"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="10dp"
+                android:background="#F5F5F5">
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:fillViewport="true">
+                    <TextView
+                        android:id="@+id/privacy_Text3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:text="위치 정보 수집 동의"
+                        android:textSize="15sp"
+                        android:textColor="@color/black"/>
+                </ScrollView>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

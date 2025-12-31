@@ -1,0 +1,9 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/profileImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="8dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="프로필 이미지" />
+</layout>

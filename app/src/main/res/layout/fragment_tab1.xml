@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/tab_view1"
+    android:background="#F8F8F8"
+    tools:context=".Tab1Fragment">
+
+    <RelativeLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+        <Button
+            android:id="@+id/tab1_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_hurricane"
+            android:backgroundTintMode="add"
+            android:textSize="15dp"
+            android:text="태풍" />
+        <Button
+            android:id="@+id/tab1_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_flood"
+            android:layout_toRightOf="@id/tab1_btn1"
+            android:backgroundTintMode="add"
+            android:text="홍수"
+            android:textSize="15dp" />
+        <Button
+            android:id="@+id/tab1_btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_cloudshower"
+            android:layout_toRightOf="@id/tab1_btn2"
+            android:backgroundTintMode="add"
+            android:text="호우"
+            android:textSize="15dp" />
+        <Button
+            android:id="@+id/tab1_btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_wind"
+            android:layout_toRightOf="@id/tab1_btn3"
+            android:textSize="15dp"
+            android:text="강풍" />
+        <Button
+            android:id="@+id/tab1_btn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_cloudsnow"
+            android:layout_below="@id/tab1_btn1"
+            android:textSize="15dp"
+            android:text="대설" />
+        <Button
+            android:id="@+id/tab1_btn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:layout_below="@id/tab1_btn1"
+            android:layout_toRightOf="@id/tab1_btn5"
+            android:drawableTop="@drawable/ic_snowblowing"
+            android:textSize="15dp"
+            android:text="한파" />
+        <Button
+            android:id="@+id/tab1_btn7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:layout_below="@id/tab1_btn1"
+            android:layout_toRightOf="@id/tab1_btn6"
+            android:textSize="15dp"
+            android:drawableTop="@drawable/ic_windwarning"
+            android:text="풍랑" />
+        <Button
+            android:id="@+id/tab1_btn8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_mask"
+            android:layout_below="@id/tab1_btn1"
+            android:layout_toRightOf="@id/tab1_btn7"
+            android:textSize="15dp"
+            android:text="황사" />
+        <Button
+            android:id="@+id/tab1_btn9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_summer"
+            android:layout_below="@id/tab1_btn5"
+            android:textSize="15dp"
+            android:text="폭염" />
+        <Button
+            android:id="@+id/tab1_btn10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:layout_below="@id/tab1_btn5"
+            android:layout_toRightOf="@id/tab1_btn9"
+            android:drawableTop="@drawable/ic_drought"
+            android:textSize="15dp"
+            android:text="가뭄" />
+        <Button
+            android:id="@+id/tab1_btn11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_broken"
+            android:layout_below="@id/tab1_btn5"
+            android:layout_toRightOf="@id/tab1_btn10"
+            android:textSize="15dp"
+            android:text="지진" />
+        <Button
+            android:id="@+id/tab1_btn12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_tsunami"
+            android:layout_below="@id/tab1_btn5"
+            android:layout_toRightOf="@id/tab1_btn11"
+            android:textSize="15dp"
+            android:text="해일" />
+        <Button
+            android:id="@+id/tab1_btn13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_mountain"
+            android:layout_below="@id/tab1_btn9"
+            android:textSize="15dp"
+            android:text="산사태" />
+        <Button
+            android:id="@+id/tab1_btn14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_volcano"
+            android:layout_below="@id/tab1_btn9"
+            android:layout_toRightOf="@id/tab1_btn13"
+            android:textSize="15dp"
+            android:text="화산폭발" />
+    </RelativeLayout>
+    <TextView
+        android:layout_gravity="bottom|center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="icon 출처 : Flaticon,icons8"/>
+</FrameLayout>

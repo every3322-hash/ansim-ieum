@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:title="사용자 설정">
+            <menu>
+                <item
+                    android:id="@+id/epbtn"
+                    android:icon="@drawable/baseline_profile"
+                    android:title="프로필 수정" />
+                <item
+                    android:id = "@+id/pwbtn"
+                    android:icon = "@drawable/baseline_password"
+                    android:title = "비밀번호 변경" />
+                <item
+                    android:id = "@+id/privacy_set"
+                    android:icon = "@drawable/baseline_key"
+                    android:title = "이용약관 및 개인정보" />
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="재난 조회">
+            <menu>
+                <item
+                    android:id="@+id/earthquake_info"
+                    android:icon="@drawable/ic_earthquake"
+                    android:title="지진 조회" />
+                <item
+                    android:id="@+id/nav_typhoon"
+                    android:title="태풍 조회"
+                    android:icon="@drawable/ic_typhoon" />
+                <item
+                    android:id="@+id/nav_fire_info"
+                    android:title="화재 조회"
+                    android:icon="@drawable/icon_fire" />
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="기타">
+            <menu>
+                <item
+                    android:id="@+id/alarm_set"
+                    android:icon="@drawable/ic_bell_ring"
+                    android:title="알림 설정" />
+                <item android:id = "@+id/favoriteBtn"
+                    android:icon = "@drawable/baseline_star"
+                    android:title = "즐겨찾기" />
+                <item android:id = "@+id/logout"
+                    android:icon = "@drawable/baseline_lock_open"
+                    android:title = "로그아웃" />
+                <item android:id = "@+id/logdelete"
+                    android:icon = "@drawable/ic_delete_user"
+                    android:title = "회원탈퇴" />
+            </menu>
+        </item>
+    </group>
+
+</menu>

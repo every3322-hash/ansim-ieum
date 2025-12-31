@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">안심이음</string>
+
+    <string name="name_txt">
+        회원님의 이름(닉네임)을 입력해 주세요.
+    </string>
+    <string name="id_txt">
+        회원님의 새로운 이메일을 입력해 주세요.
+    </string>
+    <string name="password_txt1">
+        비밀번호는 숫자+영문+특수기호 8자이상 입력하세요.
+    </string>
+    <string name="password_txt2">
+        다시한번 비밀번호를 입력해 주세요.
+    </string>
+
+    <string name="default_notification_channel_id">
+        TEST 알림 채널 one
+    </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_web_client_id">여기에_실제_Web_Client_ID_값</string>
+    <string-array name="radius_options">
+        <item>1km</item>
+        <item>3km</item>
+        <item>5km</item>
+    </string-array>
+    <string name="privacy_setting" translatable="false">개인정보 보호설정</string>
+</resources>

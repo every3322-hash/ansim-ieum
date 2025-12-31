@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/tab_view4"
+    android:background="#F8F8F8"
+    tools:context=".Tab4Fragment">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+        <Button
+            android:id="@+id/tab4_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_siren"
+            android:textSize="15dp"
+            android:text="비상사태" />
+        <Button
+            android:id="@+id/tab4_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_megaphone"
+            android:layout_toRightOf="@id/tab4_btn1"
+            android:textSize="15dp"
+            android:text="민방공" />
+        <Button
+            android:id="@+id/tab4_btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_poison"
+            android:layout_toRightOf="@id/tab4_btn2"
+            android:textSize="15dp"
+            android:text="화생방무기" />
+    </RelativeLayout>
+    <TextView
+        android:layout_gravity="bottom|center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="icon 출처 : Flaticon,icons8"/>
+
+</FrameLayout>

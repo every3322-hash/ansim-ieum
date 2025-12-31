@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- 상단 툴바 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <!-- 뒤로가기 버튼 -->
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="뒤로가기"
+            android:src="@android:drawable/ic_media_previous"
+            android:padding="8dp"
+            android:layout_gravity="start"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="37dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="게시글 작성"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_mint"/>
+
+        <!-- 저장 버튼 -->
+        <Button
+            android:id="@+id/inputBtn"
+            android:layout_width="55dp"
+            android:layout_height="48dp"
+            android:text="저장"
+            android:layout_gravity="end"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+    </LinearLayout>
+
+    <!-- 제목 입력 -->
+    <EditText
+        android:id="@+id/titleArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="제목을 입력하세요"
+        android:textSize="18sp"
+        android:padding="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@android:drawable/edit_text" />
+
+    <!-- 내용 입력 -->
+    <EditText
+        android:id="@+id/contentArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="내용을 입력하세요"
+        android:padding="12dp"
+        android:background="@android:drawable/edit_text"
+        android:gravity="top"
+        android:minHeight="150dp"
+        android:maxLines="10" />
+
+    <!-- 사진 추가 및 위치 추가 버튼 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="12dp"
+        android:padding="8dp">
+
+        <!-- 사진 추가 버튼 -->
+        <Button
+            android:id="@+id/photoButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="사진 추가"
+            android:drawableStart="@android:drawable/ic_menu_camera"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- 위치 추가 버튼 -->
+        <Button
+            android:id="@+id/locationButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="위치 추가"
+            android:drawableStart="@android:drawable/ic_menu_mylocation"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <!-- 맵 영역 (위치 버튼 클릭 시 표시) -->
+    <FrameLayout
+        android:id="@+id/mapContainer"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" /> <!-- 초기에는 숨김 상태 -->
+
+</LinearLayout>

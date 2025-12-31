@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="switch_btn">
+        <item name="thumbTint">@color/white</item>
+        <item name="track">@drawable/setting_switch_track</item>
+        <item name="android:thumb">@drawable/setting_switch_thumb</item>
+        <item name="android:enabled">true</item>
+    </style>
+    <style name="BottomSheetItem" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+</resources>

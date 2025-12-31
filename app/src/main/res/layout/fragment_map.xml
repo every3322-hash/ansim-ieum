@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+      <!-- Naver Map View -->
+      <com.naver.maps.map.MapView
+          android:id="@+id/map_view"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" />
+
+      <androidx.cardview.widget.CardView
+          android:id="@+id/search_card_view"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginHorizontal="16dp"
+          android:layout_marginBottom="16dp"
+          android:layout_marginTop="30dp"
+          app:cardElevation="8dp"
+          app:cardBackgroundColor="@android:color/white"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toStartOf="@+id/btnWebView"
+          app:cardCornerRadius="10dp">
+
+         <androidx.constraintlayout.widget.ConstraintLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:padding="3dp">
+
+            <!-- 내 정보 버튼 -->
+            <ImageButton
+                android:id="@+id/etc_menu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="내 정보"
+                android:src="@drawable/ic_etc"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- SearchView -->
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:iconifiedByDefault="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/alarm_menu"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@id/etc_menu"
+                app:layout_constraintTop_toTopOf="parent"
+                app:queryBackground="@android:color/transparent"
+                app:queryHint="검색어를 입력하세요" />
+
+            <!-- 알림 버튼 -->
+            <ImageButton
+                android:id="@+id/alarm_menu"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:contentDescription="알림"
+                android:focusable="true"
+                android:src="@drawable/ic_bell"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+         </androidx.constraintlayout.widget.ConstraintLayout>
+      </androidx.cardview.widget.CardView>
+
+      <!-- 검색어 자동완성 리스트뷰 -->
+      <ListView
+          android:id="@+id/searchSuggestionsList"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:visibility="gone"
+          android:background="@android:color/white"
+          app:layout_constraintTop_toBottomOf="@id/search_card_view"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent" />
+
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/btnWebView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginRight="10dp"
+          android:src="@drawable/ic_population"
+          android:contentDescription="웹뷰 열기"
+          app:layout_constraintTop_toTopOf="@+id/search_card_view"
+          app:layout_constraintBottom_toBottomOf="@+id/search_card_view"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:backgroundTint="#61CCB4"
+          app:shapeAppearanceOverlay="@style/FabShape1"
+          android:backgroundTint="#6EF3D6"
+          app:borderWidth="2dp"
+          app:tint="@color/black" />
+
+      <!-- 필터 버튼들 -->
+      <HorizontalScrollView
+          android:id="@+id/filter_buttons_scroll"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:background="@android:color/transparent"
+          app:layout_constraintTop_toBottomOf="@id/search_card_view"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          android:padding="8dp"
+          android:scrollbars="none">
+
+         <LinearLayout
+             android:id="@+id/filter_buttons_container"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal">
+
+            <!-- 교통사고 버튼 -->
+            <LinearLayout
+                android:id="@+id/btn_traffic_accident"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/accident_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="교통사고"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+            <!-- 공사 버튼 -->
+            <LinearLayout
+                android:id="@+id/btn_construction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/construction_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="공사"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+            <!-- 행사버튼 -->
+            <LinearLayout
+                android:id="@+id/btn_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/event_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="행사"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+            <!-- 통제 버튼 -->
+            <LinearLayout
+                android:id="@+id/btn_control"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/control_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="통제"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+            <!-- 재난 버튼 추가 -->
+            <LinearLayout
+                android:id="@+id/btn_disaster"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/disaster_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="재난"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+            <!-- 기타 버튼 -->
+            <LinearLayout
+                android:id="@+id/btn_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/other_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="기타"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+            <!-- 스쿨존 사고다발지역 버튼 -->
+            <LinearLayout
+                android:id="@+id/btn_schoolzone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/schoolzone_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="스쿨존 사고다발지역"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+            <!-- 자동제세동기(AED) 버튼 -->
+            <LinearLayout
+                android:id="@+id/btn_aed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/aed_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="자동제세동기(AED)"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+            <!-- 소방서 버튼 -->
+            <LinearLayout
+                android:id="@+id/btn_fire_station"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/fire_station_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="소방서"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+            <!-- 경찰관서 버튼 -->
+            <LinearLayout
+                android:id="@+id/btn_police_station"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/police_station_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="경찰관서"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+            <!-- 종합병원 버튼 -->
+            <LinearLayout
+                android:id="@+id/btn_hospital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/hospital_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="종합병원"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+            <!-- 지진옥외대피소 버튼 -->
+            <LinearLayout
+                android:id="@+id/btn_shelter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="8dp"
+                android:background="@drawable/button_border_selector"
+                android:clickable="true"
+                android:focusable="true">
+
+               <ImageView
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
+                   android:src="@drawable/shelter_icon" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="지진옥외대피소"
+                   android:textSize="14sp"
+                   android:layout_marginStart="8dp"
+                   android:gravity="center" />
+            </LinearLayout>
+
+         </LinearLayout>
+      </HorizontalScrollView>
+
+      <!-- Floating Button -->
+      <com.google.android.material.floatingactionbutton.FloatingActionButton
+          android:id="@+id/floatBtn1"
+          android:layout_width="55dp"
+          android:layout_height="55dp"
+          android:layout_margin="16dp"
+          android:backgroundTint="@color/white"
+          app:borderWidth="0dp"
+          app:elevation="6dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:srcCompat="@drawable/ic_location" />
+
+      <!-- 하단 정보 패널 -->
+      <LinearLayout
+          android:id="@+id/infoPanel"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:visibility="gone"
+          android:background="#FFFFFF"
+          android:padding="16dp"
+          android:elevation="8dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent">
+
+         <TextView
+             android:id="@+id/infoTitle"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Title"
+             android:textSize="16sp"
+             android:textColor="#000000" />
+
+         <Button
+             android:id="@+id/viewDetailsButton"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="자세히 보기" />
+
+         <Button
+             android:id="@+id/closeButton"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="닫기" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:id="@+id/weatherContainer"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:padding="8dp"
+          android:background="@drawable/weather_background"
+          android:clickable="true"
+          android:focusable="true"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          android:layout_marginBottom="40dp">
+
+         <ImageView
+             android:id="@+id/weatherIcon"
+             android:layout_width="40dp"
+             android:layout_height="40dp"
+             android:src="@drawable/sunny" />
+
+         <TextView
+             android:id="@+id/weatherTemperature"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="25°C"
+             android:textSize="16sp"
+             android:textColor="@android:color/black"
+             android:layout_marginStart="8dp"/>
+      </LinearLayout>
+
+      <View
+          android:id="@+id/guide_overlay"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:background="#99000000"
+          android:visibility="gone"
+          android:clickable="true"
+          android:focusable="true" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

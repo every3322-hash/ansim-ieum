@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="red">#e31010</color>
+    <color name="yellow">#eddd26</color>
+    <color name="mint">#61CCB4</color>
+    <color name="text_mint">#205D67</color>
+    <color name="yellow_star">#FFC107</color>
+    <color name="guide_target_circle_transparent">#33FFFFFF</color>
+</resources>

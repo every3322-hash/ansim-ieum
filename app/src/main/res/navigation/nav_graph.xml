@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mapFragment">
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.myapplication.MapFragment"
+        android:label="MapFragment" >
+        <action
+            android:id="@+id/action_mapFragment_to_writeFragment"
+            app:destination="@id/writeFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_memoFragment"
+            app:destination="@id/memoFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_callFragment"
+            app:destination="@id/callFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/writeFragment"
+        android:name="com.example.myapplication.WriteFragment"
+        android:label="WriteFragment" >
+        <action
+            android:id="@+id/action_writeFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_writeFragment_to_memoFragment"
+            app:destination="@id/memoFragment" />
+        <action
+            android:id="@+id/action_writeFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_writeFragment_to_callFragment"
+            app:destination="@id/callFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/memoFragment"
+        android:name="com.example.myapplication.MemoFragment"
+        android:label="MemoFragment" >
+        <action
+            android:id="@+id/action_memoFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_memoFragment_to_writeFragment"
+            app:destination="@id/writeFragment" />
+        <action
+            android:id="@+id/action_memoFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_memoFragment_to_callFragment"
+            app:destination="@id/callFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/callFragment"
+        android:name="com.example.myapplication.CallFragment"
+        android:label="CallFragment" >
+        <action
+            android:id="@+id/action_callFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_callFragment_to_writeFragment"
+            app:destination="@id/writeFragment" />
+        <action
+            android:id="@+id/action_callFragment_to_memoFragment"
+            app:destination="@id/memoFragment" />
+        <action
+            android:id="@+id/action_callFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.myapplication.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" >
+
+        <action
+            android:id="@+id/action_newsFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_memoFragment"
+            app:destination="@id/memoFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_callFragment"
+            app:destination="@id/callFragment" />
+        <action
+            android:id="@+id/action_newsFragment_to_writeFragment"
+            app:destination="@id/writeFragment" />
+    </fragment>
+</navigation>

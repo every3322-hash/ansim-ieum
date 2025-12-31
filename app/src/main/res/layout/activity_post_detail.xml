@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="30dp">
+
+    <!--  툴바: 스크롤 안 됨 -->
+    <LinearLayout
+        android:id="@+id/toolbarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:background="@android:color/transparent"
+        android:layout_alignParentTop="true">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="뒤로가기 버튼"
+            android:src="@drawable/baseline_clear" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/shareButton"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="end"
+            android:src="@drawable/ic_share"
+            android:background="?attr/selectableItemBackground"
+            android:contentDescription="공유 버튼" />
+    </LinearLayout>
+
+    <!-- 댓글 입력 섹션 -->
+    <LinearLayout
+        android:id="@+id/commentInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="#F5F5F5"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp">
+
+        <!-- 댓글 입력 필드 -->
+        <EditText
+            android:id="@+id/commentInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:hint="댓글을 입력하세요"
+            android:padding="8dp" />
+        <!-- 댓글 등록 버튼 -->
+        <Button
+            android:id="@+id/postCommentButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:backgroundTint="@android:color/holo_blue_light"
+            android:text="등록" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/commentInputLayout"
+        android:layout_below="@id/toolbarLayout"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- 프로필 섹션 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingBottom="8dp">
+
+                <!-- 프로필 사진 -->
+                <ImageView
+                    android:id="@+id/profileImage"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/profile1"
+                    android:contentDescription="프로필 사진"
+                    android:scaleType="centerCrop"
+                    android:layout_marginRight="8dp" />
+
+                <!-- 이름과 작성 날짜 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/profileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="작성자 이름"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/postDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2024-11-18"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 제목 텍스트뷰 -->
+            <TextView
+                android:id="@+id/detailTitle"
+                android:layout_width="match_parent"
+                android:layout_height="41dp"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- 내용 텍스트뷰 -->
+            <TextView
+                android:id="@+id/detailContent"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="5dp"
+                android:padding="8dp"
+                android:textSize="18sp" />
+
+            <FrameLayout
+                android:id="@+id/detail_map_fragment"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="16dp">
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/commentTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="댓글"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:padding="3dp"
+                android:layout_marginTop="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/commentContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <Button
+                android:id="@+id/likeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="♥ 좋아요"
+                android:textSize="16sp"
+                android:background="@android:color/transparent"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

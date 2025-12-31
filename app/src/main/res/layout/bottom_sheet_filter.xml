@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    android:paddingBottom="24dp">
+
+    <Button
+        android:id="@+id/btnShowAll"
+        style="@style/BottomSheetItem"
+        android:text="전체보기" />
+
+    <Button
+        android:id="@+id/btnMyTown"
+        style="@style/BottomSheetItem"
+        android:text="현재 동네 게시글 보기" />
+
+    <Button
+        android:id="@+id/btnlogTown"
+        style="@style/BottomSheetItem"
+        android:text="내 동네 게시글 보기" />
+
+</LinearLayout>

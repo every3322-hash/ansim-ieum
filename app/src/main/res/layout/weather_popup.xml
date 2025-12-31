@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/weatherTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="현재 날씨"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/weatherTemperatureDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="기온: 25°C"/>
+
+    <TextView
+        android:id="@+id/weatherPrecipitation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="강수 형태: 없음"/>
+
+    <TextView
+        android:id="@+id/weatherHumidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="습도: 60%"/>
+
+    <TextView
+        android:id="@+id/weatherWindSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="풍속: 3.5m/s"/>
+</LinearLayout>

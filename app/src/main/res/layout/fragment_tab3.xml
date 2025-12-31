@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/tab_view3"
+    android:background="#F8F8F8"
+    tools:context=".Tab3Fragment">
+
+    <RelativeLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+        <Button
+            android:id="@+id/tab3_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_hospital"
+            android:textSize="15dp"
+            android:text="응급처치" />
+        <Button
+            android:id="@+id/tab3_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_heart2"
+            android:layout_toRightOf="@+id/tab3_btn1"
+            android:textSize="14dp"
+            android:text="심폐소생술" />
+        <Button
+            android:id="@+id/tab3_btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_firee"
+            android:backgroundTintMode="add"
+            android:layout_toRightOf="@id/tab3_btn2"
+            android:textSize="15dp"
+            android:text="소화기" />
+        <Button
+            android:id="@+id/tab3_btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_vomit"
+            android:layout_toRightOf="@id/tab3_btn3"
+            android:textSize="15dp"
+            android:text="식중독" />
+        <Button
+            android:id="@+id/tab3_btn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_tracking"
+            android:layout_below="@id/tab3_btn1"
+            android:textSize="15dp"
+            android:text="산행안전" />
+        <Button
+            android:id="@+id/tab3_btn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_amusement"
+            android:layout_below="@id/tab3_btn1"
+            android:layout_toRightOf="@id/tab3_btn5"
+            android:textSize="15dp"
+            android:text="놀이시설" />
+        <Button
+            android:id="@+id/tab3_btn7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_child"
+            android:layout_below="@id/tab3_btn1"
+            android:layout_toRightOf="@id/tab3_btn6"
+            android:textSize="15dp"
+            android:text="실종유괴" />
+        <Button
+            android:id="@+id/tab3_btn8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_offense"
+            android:layout_below="@id/tab3_btn1"
+            android:layout_toRightOf="@id/tab3_btn7"
+            android:textSize="15dp"
+            android:text="성폭력" />
+        <Button
+            android:id="@+id/tab3_btn9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_school"
+            android:layout_below="@id/tab3_btn5"
+            android:textSize="15dp"
+            android:text="학교폭력" />
+        <Button
+            android:id="@+id/tab3_btn10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_home2"
+            android:layout_below="@id/tab3_btn5"
+            android:layout_toRightOf="@id/tab3_btn9"
+            android:textSize="15dp"
+            android:text="가정폭력" />
+        <Button
+            android:id="@+id/tab3_btn11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_lockup"
+            android:layout_below="@id/tab3_btn5"
+            android:layout_toRightOf="@id/tab3_btn10"
+            android:textSize="15dp"
+            android:text="억류,납치" />
+        <Button
+            android:id="@+id/tab3_btn12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_car"
+            android:layout_below="@id/tab3_btn5"
+            android:layout_toRightOf="@id/tab3_btn11"
+            android:textSize="15dp"
+            android:text="교통사고" />
+        <Button
+            android:id="@+id/tab3_btn13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_elevator"
+            android:layout_below="@id/tab3_btn9"
+            android:textSize="14dp"
+            android:text="승강기안전" />
+        <Button
+            android:id="@+id/tab3_btn14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_dust"
+            android:layout_below="@id/tab3_btn9"
+            android:layout_toRightOf="@id/tab3_btn13"
+            android:textSize="15dp"
+            android:text="미세먼지" />
+        <Button
+            android:id="@+id/tab3_btn15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_fireplug"
+            android:layout_below="@id/tab3_btn9"
+            android:layout_toRightOf="@id/tab3_btn14"
+            android:textSize="15dp"
+            android:text="소화전" />
+        <Button
+            android:id="@+id/tab3_btn16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_safety"
+            android:layout_below="@id/tab3_btn9"
+            android:layout_toRightOf="@id/tab3_btn15"
+            android:textSize="15dp"
+            android:text="가정안전"/>
+    </RelativeLayout>
+    <TextView
+        android:layout_gravity="bottom|center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="icon 출처 : Flaticon,icons8"/>
+</FrameLayout>

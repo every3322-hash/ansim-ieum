@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mapFragment"
+        android:title="홈"
+        android:enabled="true"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/callFragment"
+        android:title="신고"
+        android:enabled="true"
+        android:icon="@drawable/ic_call"/>
+    <item
+        android:id="@+id/memoFragment"
+        android:title="행동요령"
+        android:enabled="true"
+        android:icon="@drawable/ic_document"/>
+    <item
+        android:id="@+id/writeFragment"
+        android:title="게시판"
+        android:enabled="true"
+        android:icon="@drawable/ic_edit"/>
+    <item
+        android:id="@+id/newsFragment"
+        android:title="안전뉴스"
+        android:enabled="true"
+        android:icon="@drawable/ic_news"/>
+</menu>

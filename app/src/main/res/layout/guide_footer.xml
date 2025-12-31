@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/guide_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end|center_vertical"
+        android:background="@android:color/transparent"
+        android:padding="16dp">
+
+        <CheckBox
+            android:id="@+id/checkbox_never_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="다시보지않기" />
+
+        <Button
+            android:id="@+id/btn_cancel_guide"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:text="취소"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/box_layout2"/>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

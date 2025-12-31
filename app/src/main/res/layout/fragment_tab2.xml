@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/tab_view2"
+    android:background="#F8F8F8"
+    tools:context=".Tab2Fragment">
+    <RelativeLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+        <Button
+            android:id="@+id/tab2_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_see_waste"
+            android:backgroundTintMode="add"
+            android:textSize="15dp"
+            android:text="해양오염" />
+        <Button
+            android:id="@+id/tab2_btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_water_waste"
+            android:backgroundTintMode="add"
+            android:layout_toRightOf="@+id/tab2_btn1"
+            android:textSize="15dp"
+            android:text="수질오염" />
+        <Button
+            android:id="@+id/tab2_btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_water"
+            android:layout_toRightOf="@id/tab2_btn2"
+            android:textSize="15dp"
+            android:text="식용수" />
+        <Button
+            android:id="@+id/tab2_btn4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_city"
+            android:layout_toRightOf="@id/tab2_btn3"
+            android:textSize="14dp"
+            android:text="공동구재난" />
+        <Button
+            android:id="@+id/tab2_btn5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_animal"
+            android:layout_below="@+id/tab2_btn1"
+            android:textSize="15dp"
+            android:text="가축질병" />
+        <Button
+            android:id="@+id/tab2_btn6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_syringe"
+            android:layout_below="@+id/tab2_btn1"
+            android:layout_toRightOf="@id/tab2_btn5"
+            android:textSize="14dp"
+            android:text="감염병예방" />
+        <Button
+            android:id="@+id/tab2_btn7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_train"
+            android:layout_below="@+id/tab2_btn1"
+            android:layout_toRightOf="@id/tab2_btn6"
+            android:textSize="15dp"
+            android:text="철도사고" />
+        <Button
+            android:id="@+id/tab2_btn8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_card"
+            android:layout_below="@+id/tab2_btn1"
+            android:layout_toRightOf="@id/tab2_btn7"
+            android:textSize="15dp"
+            android:text="금융전산" />
+        <Button
+            android:id="@+id/tab2_btn9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_radiation"
+            android:layout_below="@+id/tab2_btn5"
+            android:textSize="15dp"
+            android:text="원전사고" />
+        <Button
+            android:id="@+id/tab2_btn10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_biohazard"
+            android:layout_below="@+id/tab2_btn5"
+            android:layout_toRightOf="@id/tab2_btn9"
+            android:textSize="15dp"
+            android:text="화학물질" />
+        <Button
+            android:id="@+id/tab2_btn11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/icon_fire"
+            android:drawableTint="@color/black"
+            android:layout_below="@+id/tab2_btn5"
+            android:layout_toRightOf="@id/tab2_btn10"
+            android:textSize="15dp"
+            android:text="화재" />
+        <Button
+            android:id="@+id/tab2_btn12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_wildfire"
+            android:backgroundTintMode="add"
+            android:layout_below="@+id/tab2_btn5"
+            android:layout_toRightOf="@id/tab2_btn11"
+            android:textSize="15dp"
+            android:text="산불" />
+        <Button
+            android:id="@+id/tab2_btn13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_building"
+            android:layout_below="@+id/tab2_btn9"
+            android:textSize="14dp"
+            android:text="건축물붕괴" />
+        <Button
+            android:id="@+id/tab2_btn14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_dam"
+            android:layout_below="@+id/tab2_btn9"
+            android:layout_toRightOf="@id/tab2_btn13"
+            android:textSize="15dp"
+            android:text="댐 붕괴" />
+        <Button
+            android:id="@+id/tab2_btn15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_mushroom"
+            android:layout_below="@+id/tab2_btn9"
+            android:layout_toRightOf="@id/tab2_btn14"
+            android:textSize="15dp"
+            android:text="폭발" />
+        <Button
+            android:id="@+id/tab2_btn16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_airplane"
+            android:layout_below="@+id/tab2_btn9"
+            android:layout_toRightOf="@id/tab2_btn15"
+            android:textSize="14dp"
+            android:text="항공기사고" />
+        <Button
+            android:id="@+id/tab2_btn17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_bmask"
+            android:layout_below="@+id/tab2_btn13"
+            android:textSize="14dp"
+            android:text="화생방사고" />
+        <Button
+            android:id="@+id/tab2_btn18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_electricity"
+            android:layout_below="@+id/tab2_btn13"
+            android:layout_toRightOf="@id/tab2_btn17"
+            android:textSize="15dp"
+            android:text="정전" />
+        <Button
+            android:id="@+id/tab2_btn19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_cable"
+            android:layout_below="@+id/tab2_btn13"
+            android:layout_toRightOf="@id/tab2_btn18"
+            android:textSize="15dp"
+            android:text="전기,가스" />
+        <Button
+            android:id="@+id/tab2_btn20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_ship"
+            android:layout_below="@+id/tab2_btn13"
+            android:layout_toRightOf="@id/tab2_btn19"
+            android:textSize="14dp"
+            android:text="유도선사고" />
+        <Button
+            android:id="@+id/tab2_btn21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_umbrella"
+            android:layout_below="@+id/tab2_btn17"
+            android:textSize="15dp"
+            android:text="수난사고" />
+        <Button
+            android:id="@+id/tab2_btn22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_terrorism"
+            android:layout_below="@+id/tab2_btn17"
+            android:layout_toRightOf="@id/tab2_btn21"
+            android:textSize="15dp"
+            android:text="테러" />
+        <Button
+            android:id="@+id/tab2_btn23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTintMode="add"
+            android:drawableTop="@drawable/ic_lightning"
+            android:layout_below="@+id/tab2_btn17"
+            android:layout_toRightOf="@id/tab2_btn22"
+            android:textSize="14dp"
+            android:text="전력수급단계별" />
+    </RelativeLayout>
+    <TextView
+        android:layout_gravity="bottom|center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="icon 출처 : Flaticon,icons8"/>
+</FrameLayout>

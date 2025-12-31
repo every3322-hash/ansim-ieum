@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:id="@+id/loginview"
+    android:padding="10dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@mipmap/title1"
+        android:layout_marginVertical="60dp"
+        android:padding="30dp">
+    </ImageView>
+
+    <EditText
+        android:id="@+id/ID"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="15dp"
+        android:inputType="text"
+        android:hint="이메일을 입력하세요">
+    </EditText>
+
+    <EditText
+        android:id="@+id/PW"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:inputType="textPassword"
+        android:hint="비밀번호를 입력하세요">
+    </EditText>
+
+    <CheckBox
+        android:id="@+id/checkbox_keep_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:layout_marginVertical="7dp"
+        android:layout_marginLeft="18dp"
+        android:text="로그인 유지하기" />
+
+    <Button
+        android:id="@+id/loginbtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/button_shape"
+        android:text="로그인"
+        android:textColor="@color/text_mint"
+        android:textSize="20dp">
+
+    </Button>
+
+    <Button
+        android:id="@+id/signbtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="회원가입"
+        android:layout_margin="15dp"
+        android:textSize="20dp"
+        android:textColor="@color/text_mint"
+        android:background="@drawable/button_shape">
+    </Button>
+
+    <Button
+        android:id="@+id/google_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"
+        android:background="@drawable/google_login"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <Button
+            android:id="@+id/IDfind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="아이디찾기"
+            android:textColor="@color/black">
+        </Button>
+
+        <Button
+            android:id="@+id/PWfind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="@color/white"
+            android:gravity="center"
+            android:text="비밀번호찾기"
+            android:textColor="@color/black">
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>
