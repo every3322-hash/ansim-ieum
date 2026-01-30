@@ -1,47 +1,72 @@
 # 안심이음 (Ansim-ieum)
-> 안전을 나누고, 안심을 잇는 지역 중심 안전 커뮤니티 앱 :contentReference[oaicite:1]{index=1}
+> 안전을 나누고, 안심을 잇는 **지역 중심 안전 커뮤니티 앱**
 
-사용자에게 다양한 안전 정보를 제공하고, 위험 요소를 주변 사람들과 게시판을 통해 공유하며 소통할 수 있는 **지역 중심 안전 커뮤니티 앱**입니다. :contentReference[oaicite:2]{index=2}
-
----
-
-## ✨ 주요 기능
-- **로그인 / 회원가입** :contentReference[oaicite:7]{index=7}  
-- **메인 화면 필터**
-  - 위험 필터: 교통사고, 공사, 행사, 통제, 재난 등 :contentReference[oaicite:8]{index=8}  
-  - 기타 안전 필터: 스쿨존 사고다발지역, AED, 소방서, 경찰서, 종합병원, 지진 옥외대피소 :contentReference[oaicite:9]{index=9}  
-- **인구 밀집도** :contentReference[oaicite:10]{index=10}  
-- **내 정보** :contentReference[oaicite:11]{index=11}  
-- **긴급 신고** :contentReference[oaicite:12]{index=12}  
-- **국민행동요령** :contentReference[oaicite:13]{index=13}  
-- **게시판(지역 소통/공유)** :contentReference[oaicite:14]{index=14}  
-- **재난 안전 뉴스** :contentReference[oaicite:15]{index=15}  
+사용자에게 다양한 안전 정보를 제공하고, 위험 요소를 주변 사람들과 **게시판을 통해 공유·소통**할 수 있는 서비스입니다.
 
 ---
 
-## 🧩 트러블슈팅 (Problem Solving)
-- 문제해결: **경찰청 API가 고정 IP만 허용**되어 다양한 디바이스에서 호출이 차단됨  
-  → 해결: **GCP 고정 IP 기반 프록시 서버(Node.js + Express)** 구축 후 앱 요청을 프록시로 우회  
-  → 결과: 개발 환경에서도 **항상 고정 IP로 전달되어 API 호출 정상화** :contentReference[oaicite:16]{index=16}
-
-- 문제해결: Firebase에서 게시글 전체를 불러온 뒤 클라이언트에서 거리/동네 필터링하여 **데이터 낭비 및 성능 저하**  
-  → 해결: Firestore 쿼리에서 **myTown 조건으로 서버단 필터링**, 전체보기는 **10개 단위 페이징 로딩**, 거리는 **하버사인(Haversine) 공식**으로 실제 거리 계산  
-  → 결과: 불필요한 데이터 전송 감소, 목록 로딩/필터링 성능 개선 :contentReference[oaicite:17]{index=17}
+## 1) 프로젝트 기획 배경
+- 안전 정보가 여러 곳에 흩어져 있고, 지역 단위로 위험 상황을 공유/소통할 공간이 부족하다고 느꼈습니다.
+- 안전 정보를 **한 곳에서 확인**하고, 동네 사람들과 **사건·사고를 공유**할 수 있는 “지역 기반 안전 커뮤니티”를 목표로 기획했습니다.
+- 벤치마킹: 안전 디딤돌 / 경기 안전 대동여지도 / 당근마켓(동네사건사고)
 
 ---
 
-## 🛠️ 개선 방향 (Roadmap)
+## 2) 기술 스택
+- **Client(App)**: Android Studio, Kotlin
+- **Backend / DB**: Firebase(Firestore)
+- **Infra(프록시 서버)**: GCP Fixed IP, Node.js, Express
+- **ETC**: 거리 계산(Haversine), 외부 API(경찰청 API 등)
+
+---
+
+## 3) 핵심 기능
+- **인증**: 로그인 / 회원가입
+- **메인 지도/필터**
+  - 위험 필터: 교통사고, 공사, 행사, 통제, 재난(산불/산사태/지진/대형사고 등)
+  - 기타 안전 필터: 스쿨존 사고다발지역, AED, 소방서, 경찰서, 종합병원, 지진 옥외대피소
+- **인구 밀집도** 확인
+- **긴급 신고**
+- **국민행동요령** 제공
+- **게시판**: 지역 위험 공유/소통
+- **재난 안전 뉴스** 제공
+- **내 정보**: 사용자 정보 확인/관리
+
+---
+
+## 4) 트러블슈팅
+### (1) 경찰청 API 호출 차단 이슈 (고정 IP 제한)
+- **문제**: 경찰청 API가 **고정 IP만 허용**하여, 개발 중 다양한 디바이스에서 API 호출이 차단됨
+- **원인**: 호출 IP가 매번 달라져 화이트리스트 정책에 걸림
+- **해결**: **GCP 고정 IP 기반 프록시 서버(Node.js + Express)** 구축  
+  - 앱 → `http://34.10.183.181:3000/proxy` 로 요청 → 프록시가 경찰청 API 호출
+- **결과**: 모든 요청이 **항상 고정 IP로 전달**되어 호출 정상화
+
+### (2) 게시글 조회 성능 저하 (클라이언트 필터링)
+- **문제**: Firebase에서 전체 게시글을 불러온 뒤 클라이언트에서 거리/동네 필터링 → **데이터 낭비 + 성능 저하**
+- **원인**: 서버단 조건 적용 없이 “전체 조회 후 필터” 방식
+- **해결**
+  - Firestore 쿼리 최적화: `myTown` 조건으로 **서버단 필터링**
+  - 전체보기: **10개 단위 페이징 로딩**(스크롤 하단 도달 시 추가 로딩)
+  - 거리 필터: **Haversine 공식**으로 현재 위치 ↔ 게시글 위치 실제 거리 계산
+- **결과**: 불필요한 데이터 전송 감소, 목록 로딩/필터링 성능 개선
+
+---
+
+## 5) 개선 방향 (Roadmap)
 - UI/UX 개선
-- 더 유용한 API 추가 연동
-- 사용자 편의 기능 추가
-- 사용자 참여형 매핑 지도 :contentReference[oaicite:18]{index=18}
+- 더 유용한 API가 있다면 추가 연동
+- 사용자 편의를 위한 기능 추가
+- 사용자 참여형 매핑 지도
 
 ---
 
-## 👥 Team
-- Team: **WE DO** :contentReference[oaicite:3]{index=3}  
-- 팀장 강지훈: 팀 관리/프로젝트 총괄, DB :contentReference[oaicite:4]{index=4}  
-- 송현우: Back-end, API 연결, 간이 서버 구축 :contentReference[oaicite:5]{index=5}  
-- 한지현: Front-end, API 연결 :contentReference[oaicite:6]{index=6}  
+## 6) 팀 구성
+
+| 이름 | 역할 | 담당 업무 |
+|---|---|---|
+| 강지훈 | 팀장 | 팀 관리/프로젝트 총괄, DB |
+| 송현우 | Back-end | API 연결, 간이 서버 구축 |
+| 한지현 | Front-end | UI 구현, API 연결 |
 
 ---
