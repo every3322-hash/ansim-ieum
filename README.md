@@ -14,6 +14,7 @@
 ## ⚙️ 기술 스택
 - **Client(App)**: Android Studio, Kotlin
 - **Backend / DB**: Firebase
+- **Infra(프록시 서버)**: GCP Fixed IP, Node.js, Express
 - **ETC**: 거리 계산(Haversine), 외부 API(경찰청 API, 재난안전데이터플랫폼 등)
 
 ---
